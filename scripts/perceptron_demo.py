@@ -215,8 +215,8 @@ if __name__ == "__main__":
             is_training = True
             x_cur = data['x'][data_seen]
             y_cur = data['y'][data_seen]
-            y_pred = w[0] + w[1] * x_cur[0] + w[2] * x_cur[1]
-            y_has_error = y_cur * y_pred
+            y_pred = w[0] + w[1] * x_cur[0] + w[2] * x_cur[1] # w^T * x
+            y_has_error = y_cur * y_pred                      # y * w^T * x
             if y_has_error <= 0:
                 data_error += 1
                 w += (y_cur * np.array([1.0, x_cur[0], x_cur[1]]))
