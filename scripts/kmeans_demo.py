@@ -13,6 +13,7 @@ import dash_html_components as html
 import numpy as np
 import dash_bootstrap_components as dbc
 import plotly.graph_objs as go
+import scipy.spatial
 
 colors = {'background': '#111111', 'text': '#7FDBDD'}
 def_font = dict(family="Courier New, Monospace", size=10, color='#000000')
@@ -154,12 +155,31 @@ if __name__ == "__main__":
             generate_data('data3')
         elif 'btn-next' in changed_id:
             global clusters
-            
-            if len(clusters['means'])==0:
-                clusters['means'] = data['x'][np.random.randint(len(data['x']), size=2)]
 
+            if len(clusters['means']) == 0:
+                # if no clusters are defined --> randomly select clusters
+                clusters['means'] = data['x'][np.random.randint(len(data['x']),
+                                                                size=2)]
+            else:
+                # compute new cluster means (centroids):
+                n_clusters = 2
+                clusters['means'] = [np.mean(data['x'][clusters['labels']==c], axis=0)
+                                     for c in range(n_clusters)]
 
+            # assign each point to each closest centroid:
 
+            # compute the [n_examples x n_clusters] distance matrix
+            # of each point i from each cluster mean (centroid):
+            cluster_distances = scipy.spatial.distance_matrix(data['x'],
+                                                              clusters['means'])
+
+            # get closest means:
+            closest_clusters = np.argmin(cluster_distances, axis=1)
+
+            # update cluster labels:
+            clusters['labels'] = closest_clusters
+
+            print(clusters['means'])
 
         elif 'btn-data-2' in changed_id:
             msg = 'Button 3 was most recently clicked'
