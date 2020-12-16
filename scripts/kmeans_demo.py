@@ -53,34 +53,63 @@ def generate_data(data_val):
 
         data['x'] = np.array([a, b]).T
     if data_val == "data2":
-        m1 = [-4.5, -0.5]
-        m2 = [0.5, 0.5]
+        m1 = [-2, -2]
+        m2 = [-2, 2]
+        m3 = [2, -2]
+        m4 = [2, 2]
         a = np.concatenate([np.random.normal(m1[0], 1, n_samples),
-                            np.random.normal(m2[0], 1, n_samples)])
+                            np.random.normal(m2[0], 1, n_samples),
+                            np.random.normal(m3[0], 1, n_samples),
+                            np.random.normal(m4[0], 1, n_samples)])
         b = np.concatenate([np.random.normal(m1[1], 1, n_samples),
-                            np.random.normal(m2[1], 1, n_samples)])
+                            np.random.normal(m2[1], 1, n_samples),
+                            np.random.normal(m3[1], 1, n_samples),
+                            np.random.normal(m4[1], 1, n_samples)])
 
         data['x'] = np.array([a, b]).T
 
     if data_val == "data3":
         data['x'] = np.array([[1, 0], [1, 1], [0, 0], [0, 1]])
 
+    # shuffle data
+    np.random.shuffle(data['x'])
+
 
 def draw_data():
     global data
-    colors = ['lightcoral', 'greenyellow']
+    colors = ['lightcoral', 'mediumspringgreen', 'darkmagenta', 'rosybrown']
     if len(data['x']) > 0:
 
+        # draw cluster centers:
         centroid_plots = []
         for icen, cen in enumerate(clusters['means']):
             centroid_plots.append(
                 go.Scatter(x=[cen[0]],
                            y=[cen[1]],
                            mode='markers', name=f'cluster_{icen}',
-                           marker_size=10,
+                           marker_size=20,
                            marker_color=colors[icen]))
 
 
+        # draw data points assignments to clusters
+        assignments_plots = []
+        for icen, cen in enumerate(clusters['means']):
+            cur_points = data['x'][clusters['labels']==icen]
+            assignments_plots.append(
+                go.Scatter(x=cur_points[:,0],
+                           y=cur_points[:,1],
+                           mode='markers', name=f'cluster_{icen}',
+                           marker=dict(
+                               color='rgba(0, 0, 0, 0)',
+                               size=6,
+                               line=dict(
+                                   color=colors[icen],
+                                   width=2
+                               )
+                           ),
+                           ))
+
+        # draw data points
         figure = {'data': [
                             # draw the data:
                             go.Scatter(x=data['x'][:, 0],
@@ -90,8 +119,9 @@ def draw_data():
                                        marker_color='rgba(22, 182, 255, .9)'
                                        ),
 
-                            # draw the centroids:
-        ] + centroid_plots,
+                            # draw the centroids and the point assignment:
+        ] + centroid_plots + assignments_plots,
+
             'layout': go.Layout(
                 xaxis=dict(range=[min(data['x'][:, 0]) -
                                   np.mean(np.abs(data['x'][:, 0])),
@@ -141,7 +171,7 @@ def get_layout():
                 dbc.Col(html.Button('Data 1', id='btn-data-1', n_clicks=0)),
                 dbc.Col(html.Button('Data 2', id='btn-data-2', n_clicks=0)),
                 dbc.Col(html.Button('Data 3', id='btn-data-3', n_clicks=0)),
-                dbc.Col(html.Button('Perceptron Step', id='btn-next',
+                dbc.Col(html.Button('k-means', id='btn-next',
                                     n_clicks=0)),
                 html.Div(id='container-button-timestamp')
             ], className="h-1"),
@@ -174,15 +204,17 @@ if __name__ == "__main__":
             generate_data('data3')
         elif 'btn-next' in changed_id:
             global clusters
+            global n_clusters
+            n_clusters = 4
 
             if len(clusters['means']) == 0:
                 # if no clusters are defined --> randomly select clusters
                 clusters['means'] = data['x'][np.random.randint(len(data['x']),
-                                                                size=2)]
+                                                                size=n_clusters)]
             else:
                 # compute new cluster means (centroids):
-                n_clusters = 2
-                clusters['means'] = [np.mean(data['x'][clusters['labels']==c], axis=0)
+                clusters['means'] = [np.mean(data['x'][clusters['labels'] == c],
+                                             axis=0)
                                      for c in range(n_clusters)]
 
             # assign each point to each closest centroid:
@@ -198,7 +230,6 @@ if __name__ == "__main__":
             # update cluster labels:
             clusters['labels'] = closest_clusters
 
-            print(clusters['means'])
 
         elif 'btn-data-2' in changed_id:
             msg = 'Button 3 was most recently clicked'
