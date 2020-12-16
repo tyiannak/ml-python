@@ -36,7 +36,7 @@ def_layout_height = 190
 
 def generate_data(data_val):
     global data
-    n_samples = 10
+    n_samples = 100
     global is_training
     is_training = False
     global w
@@ -68,21 +68,40 @@ def generate_data(data_val):
 
 def draw_data():
     global data
-    if len(data['x'])>0:
+    colors = ['lightcoral', 'greenyellow']
+    if len(data['x']) > 0:
+
+        centroid_plots = []
+        for icen, cen in enumerate(clusters['means']):
+            centroid_plots.append(
+                go.Scatter(x=[cen[0]],
+                           y=[cen[1]],
+                           mode='markers', name=f'cluster_{icen}',
+                           marker_size=10,
+                           marker_color=colors[icen]))
+
+
         figure = {'data': [
+                            # draw the data:
                             go.Scatter(x=data['x'][:, 0],
                                        y=data['x'][:, 1],
-                                       mode='markers', name='y = -1',
-                                       marker_size=10,
+                                       mode='markers', name='data',
+                                       marker_size=5,
                                        marker_color='rgba(22, 182, 255, .9)'
-                                       )
-                       ],
+                                       ),
+
+                            # draw the centroids:
+        ] + centroid_plots,
             'layout': go.Layout(
-                xaxis=dict(range=[min(data['x'][:, 0]) - np.mean(np.abs(data['x'][:, 0])),
-                                  max(data['x'][:, 0]) + np.mean(np.abs(data['x'][:, 0]))
+                xaxis=dict(range=[min(data['x'][:, 0]) -
+                                  np.mean(np.abs(data['x'][:, 0])),
+                                  max(data['x'][:, 0]) +
+                                  np.mean(np.abs(data['x'][:, 0]))
                         ]),
-                yaxis=dict(range=[min(data['x'][:, 1]) - np.mean(np.abs(data['x'][:, 1])),
-                                  max(data['x'][:, 1]) + np.mean(np.abs(data['x'][:, 1]))
+                yaxis=dict(range=[min(data['x'][:, 1]) -
+                                  np.mean(np.abs(data['x'][:, 1])),
+                                  max(data['x'][:, 1]) +
+                                  np.mean(np.abs(data['x'][:, 1]))
                                                   ]))}
     else:
         figure = {}
