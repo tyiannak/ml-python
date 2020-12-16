@@ -12,13 +12,10 @@ import dash_core_components as dcc
 import dash_html_components as html
 import numpy as np
 import dash_bootstrap_components as dbc
-import pandas as pd
 import plotly.graph_objs as go
 
 colors = {'background': '#111111', 'text': '#7FDBDD'}
 def_font = dict(family="Courier New, Monospace", size=10, color='#000000')
-
-from datetime import date
 
 # global vars related to data loaded
 global data
