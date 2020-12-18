@@ -171,10 +171,15 @@ def get_layout():
                 dbc.Col(html.Button('Data 1', id='btn-data-1', n_clicks=0)),
                 dbc.Col(html.Button('Data 2', id='btn-data-2', n_clicks=0)),
                 dbc.Col(html.Button('Data 3', id='btn-data-3', n_clicks=0)),
+                dbc.Col(dcc.Dropdown(id='drop_down_n_clusters',
+                             options=[{'label': 'n_clusters=2', 'value': '2'},
+                                      {'label': 'n_clusters=3', 'value': '3'},
+                                      {'label': 'n_clusters=4', 'value': '4'}],
+                             value='2')),
                 dbc.Col(html.Button('k-means', id='btn-next',
                                     n_clicks=0)),
                 html.Div(id='container-button-timestamp')
-            ], className="h-1"),
+            ], className="h-5"),
 
     ], style={"height": "100vh"})
 
@@ -193,8 +198,9 @@ if __name__ == "__main__":
                   dash.dependencies.Input('btn-data-1', 'n_clicks'),
                   dash.dependencies.Input('btn-next', 'n_clicks'),
                   dash.dependencies.Input('btn-data-2', 'n_clicks'),
-                  dash.dependencies.Input('btn-data-3', 'n_clicks'))
-    def displayClick(btn1, btn2, btn3, btn4):
+                  dash.dependencies.Input('btn-data-3', 'n_clicks'),
+                  dash.dependencies.Input('drop_down_n_clusters', 'value'))
+    def displayClick(btn1, btn2, btn3, btn4, n_clusters_drop):
         changed_id = [p['prop_id'] for p in dash.callback_context.triggered][0]
         if 'btn-data-1' in changed_id:
             generate_data('data1')
@@ -205,7 +211,7 @@ if __name__ == "__main__":
         elif 'btn-next' in changed_id:
             global clusters
             global n_clusters
-            n_clusters = 4
+            n_clusters = int(n_clusters_drop)
 
             if len(clusters['means']) == 0:
                 # if no clusters are defined --> randomly select clusters
