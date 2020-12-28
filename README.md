@@ -12,6 +12,7 @@ Most examples are in the form of Jupyter notebooks. Since github does not render
 [notebooks/2-logistic-regression.ipyn](https://nbviewer.jupyter.org/github/tyiannak/ml-python/blob/main/notebooks/2-logistic-regression.ipynb) demonstrates how to use Gradient Ascent to train a logistic regression binary classifier using some 2D training data. It also visualizes the decision surface and the probability estimates of the classifier on the 2D feature space. 
 
 ### Bayesian / GDA classifiers, Naive Bayes, kNN
+[notebooks/3-gda.ipynb](https://nbviewer.jupyter.org/github/tyiannak/ml-python/blob/main/notebooks/3-gda.ipynb) shows a simple example of how Gaussian Discriminant Analysis and the Bayes Rule can be used to estimate p(y|x) given y(x|y) for a 1-D binary classification task. 
 
 ### Perceptron, SVMs
 
