@@ -18,14 +18,17 @@ Most examples are in the form of Jupyter notebooks. Since github does not render
 [scripts/perceptron_demo.py](https://github.com/tyiannak/ml-python/blob/main/scripts/perceptron_demo.py) demonstrates the steps of the basic perceptron algorithm. 
 
 ### Decision Trees, Ensembles
+(notebooks/8-decision-tree-example.ipynb)[https://nbviewer.jupyter.org/github/tyiannak/ml-python/blob/main/notebooks/8-decision-tree-example.ipynb] shows a Decision Tree training example, visualizing the decision tree areas and the tree itself. 
 
 ### Practical ML Issues
 [notebooks/4-a_simple_sk_learn_example_songs_.ipynb](https://nbviewer.jupyter.org/github/tyiannak/ml-python/blob/main/notebooks/4-a_simple_sk_learn_example_songs_.ipynb) demonstrates how to predict a song's popularity from the respective emotional valence and arousal using 2 features and a linear SVM classifier. Towards this end, a sample dataset of 5000 songs and respective Spotify metadata is used. 
 
-[4-b_simple_sk_learn_example_songs_.ipynb](https://nbviewer.jupyter.org/github/tyiannak/ml-python/blob/main/notebooks/4-b_simple_sk_learn_example_songs_.ipynb) uses the same spotify dataset to predict a musical gender from the respective "song speechiness" (a spotify attribute) and emotional arousal (energy).
+[notebooks/4-b_simple_sk_learn_example_songs_.ipynb](https://nbviewer.jupyter.org/github/tyiannak/ml-python/blob/main/notebooks/4-b_simple_sk_learn_example_songs_.ipynb) uses the same spotify dataset to predict a musical gender from the respective "song speechiness" (a spotify attribute) and emotional arousal (energy).
 
 [notebooks/5-overfitting.ipynb](https://nbviewer.jupyter.org/github/tyiannak/ml-python/blob/main/notebooks/5-overfitting.ipynb) and [notebooks/6-overfitting_class.ipynb](https://nbviewer.jupyter.org/github/tyiannak/ml-python/blob/main/notebooks/6-overfitting_class.ipynb) demonstrate the problem of overfitting in regression and classfication respectively. 
 
+[notebooks/7-ml_speed.ipynb](https://nbviewer.jupyter.org/github/tyiannak/ml-python/blob/main/notebooks/7-ml_speed.ipynb) evaluate basic classifiers (including SVMs, Adaboost, Random Forestes, Naive Bayes, etc) with regards to their performance and speed (during training and testing), for various datasets with different number of dimensions (features), feature dependence and number of examples. Useful conclusions can be directly drawn by the results, e.g. Naive Bayes is always the fastest (both in training and testing time) and it has a good performance when features are indepedent. 
 
++++
 
 ### Clustering, Dimensionality Reduction
