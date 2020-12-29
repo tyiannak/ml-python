@@ -15,9 +15,17 @@ Most examples are in the form of Jupyter notebooks. Since github does not render
 [notebooks/3-gda.ipynb](https://nbviewer.jupyter.org/github/tyiannak/ml-python/blob/main/notebooks/3-gda.ipynb) shows a simple example of how Gaussian Discriminant Analysis and the Bayes Rule can be used to estimate p(y|x) given y(x|y) for a 1-D binary classification task. 
 
 ### Perceptron, SVMs
+[scripts/perceptron_demo.py](https://github.com/tyiannak/ml-python/blob/main/scripts/perceptron_demo.py) demonstrates the steps of the basic perceptron algorithm. 
 
 ### Decision Trees, Ensembles
 
 ### Practical ML Issues
+[notebooks/4-a_simple_sk_learn_example_songs_.ipynb](https://nbviewer.jupyter.org/github/tyiannak/ml-python/blob/main/notebooks/4-a_simple_sk_learn_example_songs_.ipynb) demonstrates how to predict a song's popularity from the respective emotional valence and arousal using 2 features and a linear SVM classifier. Towards this end, a sample dataset of 5000 songs and respective Spotify metadata is used. 
+
+[4-b_simple_sk_learn_example_songs_.ipynb](https://nbviewer.jupyter.org/github/tyiannak/ml-python/blob/main/notebooks/4-b_simple_sk_learn_example_songs_.ipynb) uses the same spotify dataset to predict a musical gender from the respective "song speechiness" (a spotify attribute) and emotional arousal (energy).
+
+[notebooks/5-overfitting.ipynb](https://nbviewer.jupyter.org/github/tyiannak/ml-python/blob/main/notebooks/5-overfitting.ipynb) and [notebooks/6-overfitting_class.ipynb](https://nbviewer.jupyter.org/github/tyiannak/ml-python/blob/main/notebooks/6-overfitting_class.ipynb) demonstrate the problem of overfitting in regression and classfication respectively. 
+
+
 
 ### Clustering, Dimensionality Reduction
