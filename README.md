@@ -15,7 +15,7 @@ Most examples are in the form of Jupyter notebooks. Since github does not render
 [notebooks/3-gda.ipynb](https://nbviewer.jupyter.org/github/tyiannak/ml-python/blob/main/notebooks/3-gda.ipynb) shows a simple example of how Gaussian Discriminant Analysis and the Bayes Rule can be used to estimate p(y|x) given y(x|y) for a 1-D binary classification task. 
 
 ### Perceptron, SVMs
-[scripts/perceptron_demo.py](https://github.com/tyiannak/ml-python/blob/main/scripts/perceptron_demo.py) demonstrates the steps of the basic perceptron algorithm. 
+[scripts/perceptron_demo.py](https://github.com/tyiannak/ml-python/blob/main/scripts/perceptron_demo.py) demonstrates the steps of the basic perceptron algorithm in an interactive manner using a dash-generated UI. 
 
 ### Decision Trees, Ensembles
 [notebooks/8-decision-tree-example.ipynb](https://nbviewer.jupyter.org/github/tyiannak/ml-python/blob/main/notebooks/8-decision-tree-example.ipynb) shows a Decision Tree training example, visualizing the decision tree areas and the tree itself. 
@@ -29,6 +29,7 @@ Most examples are in the form of Jupyter notebooks. Since github does not render
 
 [notebooks/7-ml_speed.ipynb](https://nbviewer.jupyter.org/github/tyiannak/ml-python/blob/main/notebooks/7-ml_speed.ipynb) evaluate basic classifiers (including SVMs, Adaboost, Random Forestes, Naive Bayes, etc) with regards to their performance and speed (during training and testing), for various datasets with different number of dimensions (features), feature dependence and number of examples. Useful conclusions can be directly drawn by the results, e.g. Naive Bayes is always the fastest (both in training and testing time) and it has a good performance when features are indepedent. 
 
-+++
+[notebooks/9-evaluation.ipynb](https://nbviewer.jupyter.org/github/tyiannak/ml-python/blob/main/notebooks/9-evaluation.ipynb) shows how to compute classifier validation metrics (confusion matrix, accuracy, f1 etc) using scikit-learn. It also demonstrates the calculation of ROC and Precision-Recall curves on the 5000 song dataset described above. 
 
 ### Clustering, Dimensionality Reduction
+[scripts/perceptron_demo.py](https://github.com/tyiannak/ml-python/blob/main/scripts/perceptron_demo.py) uses dash to create a simple demo that shows how the kmeans algorithm works on artificial datasets
