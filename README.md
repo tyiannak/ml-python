@@ -18,7 +18,7 @@ Most examples are in the form of Jupyter notebooks. Since github does not render
 [scripts/perceptron_demo.py](https://github.com/tyiannak/ml-python/blob/main/scripts/perceptron_demo.py) demonstrates the steps of the basic perceptron algorithm. 
 
 ### Decision Trees, Ensembles
-(notebooks/8-decision-tree-example.ipynb)[https://nbviewer.jupyter.org/github/tyiannak/ml-python/blob/main/notebooks/8-decision-tree-example.ipynb] shows a Decision Tree training example, visualizing the decision tree areas and the tree itself. 
+[notebooks/8-decision-tree-example.ipynb](https://nbviewer.jupyter.org/github/tyiannak/ml-python/blob/main/notebooks/8-decision-tree-example.ipynb) shows a Decision Tree training example, visualizing the decision tree areas and the tree itself. 
 
 ### Practical ML Issues
 [notebooks/4-a_simple_sk_learn_example_songs_.ipynb](https://nbviewer.jupyter.org/github/tyiannak/ml-python/blob/main/notebooks/4-a_simple_sk_learn_example_songs_.ipynb) demonstrates how to predict a song's popularity from the respective emotional valence and arousal using 2 features and a linear SVM classifier. Towards this end, a sample dataset of 5000 songs and respective Spotify metadata is used. 
