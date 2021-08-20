@@ -33,3 +33,9 @@ Most examples are in the form of Jupyter notebooks. Since github does not render
 
 ### Clustering, Dimensionality Reduction
 [scripts/perceptron_demo.py](https://github.com/tyiannak/ml-python/blob/main/scripts/perceptron_demo.py) uses dash to create a simple demo that shows how the kmeans algorithm works on artificial datasets
+
+## Author
+<img src="https://tyiannak.github.io/files/3.JPG" align="left" height="100"/>
+
+[Theodoros Giannakopoulos](https://tyiannak.github.io),
+Principal Researcher of Multimodal Machine Learning at the [Multimedia Analysis Group of the Computational Intelligence Lab (MagCIL)](https://labs-repos.iit.demokritos.gr/MagCIL/index.html) of the Institute of Informatics and Telecommunications, of the National Center for Scientific Research "Demokritos"
