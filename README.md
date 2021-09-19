@@ -32,7 +32,7 @@ Most examples are in the form of Jupyter notebooks. Since github does not render
 [notebooks/9-evaluation.ipynb](https://nbviewer.jupyter.org/github/tyiannak/ml-python/blob/main/notebooks/9-evaluation.ipynb) shows how to compute classifier validation metrics (confusion matrix, accuracy, f1 etc) using scikit-learn. It also demonstrates the calculation of ROC and Precision-Recall curves on the 5000 song dataset described above. 
 
 ### Clustering, Dimensionality Reduction
-[scripts/perceptron_demo.py](https://github.com/tyiannak/ml-python/blob/main/scripts/perceptron_demo.py) uses dash to create a simple demo that shows how the kmeans algorithm works on artificial datasets
+[scripts/kmeans_demo.py](https://github.com/tyiannak/ml-python/blob/main/scripts/kmeans_demo.py) uses dash to create a simple demo that shows how the kmeans algorithm works on artificial datasets
 
 ## Author
 <img src="https://tyiannak.github.io/files/3.JPG" align="left" height="100"/>
