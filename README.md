@@ -29,6 +29,8 @@ Most examples are in the form of Jupyter notebooks. Since github does not render
 
 [notebooks/7-ml_speed.ipynb](https://nbviewer.jupyter.org/github/tyiannak/ml-python/blob/main/notebooks/7-ml_speed.ipynb) evaluate basic classifiers (including SVMs, Adaboost, Random Forestes, Naive Bayes, etc) with regards to their performance and speed (during training and testing), for various datasets with different number of dimensions (features), feature dependence and number of examples. Useful conclusions can be directly drawn by the results, e.g. Naive Bayes is always the fastest (both in training and testing time) and it has a good performance when features are indepedent. 
 
+[notebooks/7-b-scaling.ipynb](https://nbviewer.org/github/tyiannak/ml-python/blob/main/notebooks/7-b-scaling.ipynb) shows how to use sklearn's standard scaler, to scale the features using their means and stds. The "wine" sklearn sample dataset is used and performance results with and without scaling are presented, for basic classifiers. 
+
 [notebooks/9-evaluation.ipynb](https://nbviewer.jupyter.org/github/tyiannak/ml-python/blob/main/notebooks/9-evaluation.ipynb) shows how to compute classifier validation metrics (confusion matrix, accuracy, f1 etc) using scikit-learn. It also demonstrates the calculation of ROC and Precision-Recall curves on the 5000 song dataset described above. 
 
 ### Clustering, Dimensionality Reduction
