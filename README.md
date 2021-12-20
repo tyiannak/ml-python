@@ -33,6 +33,8 @@ Most examples are in the form of Jupyter notebooks. Since github does not render
 
 [notebooks/9-evaluation.ipynb](https://nbviewer.jupyter.org/github/tyiannak/ml-python/blob/main/notebooks/9-evaluation.ipynb) shows how to compute classifier validation metrics (confusion matrix, accuracy, f1 etc) using scikit-learn. It also demonstrates the calculation of ROC and Precision-Recall curves on the 5000 song dataset described above. 
 
+[notebooks/10-evaluation2.ipynb](https://nbviewer.org/github/tyiannak/ml-python/blob/main/notebooks/10-evaluation2.ipynb) demonstrates how to evaluate a classifier using either sklearn pipeline or "manually" using `sklearn.model_selection.RepeatedKFold`
+
 ### Clustering, Dimensionality Reduction
 [scripts/kmeans_demo.py](https://github.com/tyiannak/ml-python/blob/main/scripts/kmeans_demo.py) uses dash to create a simple demo that shows how the kmeans algorithm works on artificial datasets
 
