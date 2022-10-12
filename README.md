@@ -38,6 +38,11 @@ Most examples are in the form of Jupyter notebooks. Since github does not render
 ### Clustering, Dimensionality Reduction
 [scripts/kmeans_demo.py](https://github.com/tyiannak/ml-python/blob/main/scripts/kmeans_demo.py) uses dash to create a simple demo that shows how the kmeans algorithm works on artificial datasets
 
+### Future tasks
+Naive bayes for text task
+
+SVM example
+
 ## Author
 <img src="https://tyiannak.github.io/files/3.JPG" align="left" height="100"/>
 
