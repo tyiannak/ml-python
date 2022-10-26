@@ -1,7 +1,5 @@
 # ml-python
-This repo contains Python examples for the Machine Learning Course at the [MSc Program of AI](http://msc-ai.iit.demokritos.gr), organzied by NCSR Demokritos and University of Piraeus. 
-
-Most examples are in the form of Jupyter notebooks. Since github does not render plotly figures, the links of this readme file are not directly to the github files but to nbviewer links ([https://nbviewer.jupyter.org](https://nbviewer.jupyter.org)). 
+This repo contains Python examples for the Machine Learning Course at the [MSc Program of AI](http://msc-ai.iit.demokritos.gr), organzied by NCSR Demokritos and University of Piraeus. Most examples are in the form of Jupyter notebooks. Since github does not render plotly figures, the links of this readme file are not directly to the github files but to nbviewer links ([https://nbviewer.jupyter.org](https://nbviewer.jupyter.org)). 
 
 ## Topics
 
@@ -39,9 +37,9 @@ Most examples are in the form of Jupyter notebooks. Since github does not render
 [scripts/kmeans_demo.py](https://github.com/tyiannak/ml-python/blob/main/scripts/kmeans_demo.py) uses dash to create a simple demo that shows how the kmeans algorithm works on artificial datasets
 
 ### Future tasks
-Naive bayes for text task
-
-SVM example
+####Naive bayes for text task
+####Feature selection example
+####SVM example
 
 ## Author
 <img src="https://tyiannak.github.io/files/3.JPG" align="left" height="100"/>
