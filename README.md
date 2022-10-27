@@ -40,6 +40,7 @@ This repo contains Python examples for the Machine Learning Course at the [MSc P
 #### Naive bayes for text task
 #### Feature selection example
 #### SVM example
+#### Feature extraction example (audio?)
 
 ## Author
 <img src="https://tyiannak.github.io/files/3.JPG" align="left" height="100"/>
