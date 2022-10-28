@@ -37,10 +37,10 @@ This repo contains Python examples for the Machine Learning Course at the [MSc P
 [scripts/kmeans_demo.py](https://github.com/tyiannak/ml-python/blob/main/scripts/kmeans_demo.py) uses dash to create a simple demo that shows how the kmeans algorithm works on artificial datasets
 
 ### Future tasks
-#### Naive bayes for text task
-#### Feature selection example
-#### SVM example
-#### Feature extraction example (audio?)
+#### 1. Naive bayes for text task
+#### 2. Feature extraction example (audio?) + Feature selection example
+#### 3. SVM example
+#### 4. Dimensionality reduction example (PCA)
 
 ## Author
 <img src="https://tyiannak.github.io/files/3.JPG" align="left" height="100"/>
