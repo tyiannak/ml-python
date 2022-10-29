@@ -36,6 +36,9 @@ This repo contains Python examples for the Machine Learning Course at the [MSc P
 ### Clustering, Dimensionality Reduction
 [scripts/kmeans_demo.py](https://github.com/tyiannak/ml-python/blob/main/scripts/kmeans_demo.py) uses dash to create a simple demo that shows how the kmeans algorithm works on artificial datasets
 
+[notebooks/11 - Dimensionality reduction and visualisation example.ipynb](https://nbviewer.org/github/tyiannak/ml-python/blob/main/notebooks/11 - Dimensionality reduction and visualisation example.ipynb) demonstrates how to extract a set of audio features for two classes, then perform dimensionality reduction and visualize the reduced features in the 2D space. 
+
+
 ### Future tasks
 #### 1. Naive bayes for text task
 #### 2. Feature extraction example (audio?) + Feature selection example
