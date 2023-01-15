@@ -25,15 +25,29 @@ for d in dir_list:
                 if start in timestamps and end in timestamps:
                     i_start = timestamps.index(start)
                     i_end = timestamps.index(end)
-                    print(start, end, a[i_start: i_end, 2].shape, label)
-
                     if label in features:
                         features[label].append(a[i_start: i_end, 2:])
                     else:
                         features[label] = [a[i_start: i_end, 2:]]
-
     print(len(features['squats']))
 
+X = []
+y = []
+for class_name in features:
+    for f in features[class_name]:
+        X.append(np.mean(f, axis=0).tolist() + np.std(f, axis=0).tolist())
+        y.append(class_name)
+X = np.array(X)
+y = np.array(y)
+print(X)
+print(y)
+
+X_train = X[0:int(len(y) * 0.8), :]
+y_train = y[0:int(len(y) * 0.8)]
+X_test = X[int(len(y) * 0.8):, :]
+y_test = y[int(len(y) * 0.8):]
+
+print(X_train.shape, X_test.shape)
 
 #print(gt)
 
