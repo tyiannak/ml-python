@@ -35,20 +35,29 @@ X = []
 y = []
 for class_name in features:
     for f in features[class_name]:
-        X.append(np.mean(f, axis=0).tolist() + np.std(f, axis=0).tolist())
+        X.append(np.mean(f, axis=0).tolist() + np.std(f, axis=0).tolist() + np.min(f, axis=0).tolist() + np.max(f, axis=0).tolist())
         y.append(class_name)
 X = np.array(X)
 y = np.array(y)
 print(X)
 print(y)
 
-X_train = X[0:int(len(y) * 0.8), :]
-y_train = y[0:int(len(y) * 0.8)]
-X_test = X[int(len(y) * 0.8):, :]
-y_test = y[int(len(y) * 0.8):]
-
+X_train = X[1::2, :]
+y_train = y[1::2]
+X_test = X[0::2, :]
+y_test = y[0::2]
+print(y_test)
 print(X_train.shape, X_test.shape)
 
+from sklearn import svm
+clf = svm.SVC(probability=True)     # initialize the classifier with probabilistic output!
+clf.fit(X_train, y_train)           # train the classifier 
+y_pred = clf.predict(X_test)
+
+from sklearn import metrics
+class_names = [k for k in features]
+print(metrics.confusion_matrix(y_test, y_pred, labels=class_names))
+print(class_names)
 #print(gt)
 
 
