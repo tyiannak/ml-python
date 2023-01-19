@@ -39,21 +39,21 @@ for class_name in features:
         y.append(class_name)
 X = np.array(X)
 y = np.array(y)
-print(X)
-print(y)
 
 X_train = X[1::2, :]
 y_train = y[1::2]
 X_test = X[0::2, :]
 y_test = y[0::2]
-print(y_test)
-print(X_train.shape, X_test.shape)
 
+
+# train the model:
 from sklearn import svm
 clf = svm.SVC(probability=True)     # initialize the classifier with probabilistic output!
 clf.fit(X_train, y_train)           # train the classifier 
 y_pred = clf.predict(X_test)
 
+
+# test the model:
 from sklearn import metrics
 class_names = [k for k in features]
 print(metrics.confusion_matrix(y_test, y_pred, labels=class_names))
