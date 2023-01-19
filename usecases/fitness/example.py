@@ -15,8 +15,6 @@ for d in dir_list:
         a = np.load(cur_numpy_file)
         timestamps = a[:, 0].astype('int').tolist()
 
-        #print(timestamps.shape)
-        #gt = pd.read_csv('w20/w20_labels.csv')
         with open(os.path.join('mm-fit', d, d + '_labels.csv'), 'r') as file:
             csvreader = csv.reader(file)
             for row in csvreader:
@@ -29,8 +27,8 @@ for d in dir_list:
                         features[label].append(a[i_start: i_end, 2:])
                     else:
                         features[label] = [a[i_start: i_end, 2:]]
-    print(len(features['squats']))
 
+# create the dataset:
 X = []
 y = []
 for class_name in features:
