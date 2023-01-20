@@ -9,12 +9,11 @@ features = {}
 
 
 for d in dir_list:
-    print(d)
-    cur_numpy_file = os.path.join('mm-fit', d, d + '_sw_l_gyr.npy') 
+    cur_numpy_file = os.path.join('mm-fit', d, d + '_sw_r_acc.npy') 
     if os.path.isfile(cur_numpy_file):
         a = np.load(cur_numpy_file)
+        print(a.shape)
         timestamps = a[:, 0].astype('int').tolist()
-
         with open(os.path.join('mm-fit', d, d + '_labels.csv'), 'r') as file:
             csvreader = csv.reader(file)
             for row in csvreader:
@@ -27,6 +26,31 @@ for d in dir_list:
                         features[label].append(a[i_start: i_end, 2:])
                     else:
                         features[label] = [a[i_start: i_end, 2:]]
+
+import matplotlib.pyplot as plt 
+#plt.plot(features['squats'][0])
+plt.subplot(3,2,1)
+plt.plot(features['jumping_jacks'][0])
+plt.title('jumping_jacks')
+
+plt.subplot(3,2,2)
+plt.plot(features['squats'][0])
+plt.title('squats')
+
+plt.subplot(3,2,3)
+plt.plot(features['situps'][0])
+plt.title('situps')
+
+plt.subplot(3,2,4)
+plt.plot(features['dumbbell_shoulder_press'][0])
+plt.title('dumbbell_shoulder_press')
+
+plt.subplot(3,2,5)
+plt.plot(features['pushups'][0])
+plt.title('pushups')
+
+
+plt.show()
 
 # create the dataset:
 X = []
@@ -54,9 +78,15 @@ y_pred = clf.predict(X_test)
 # test the model:
 from sklearn import metrics
 class_names = [k for k in features]
-print(metrics.confusion_matrix(y_test, y_pred, labels=class_names))
+confusion_matrix = metrics.confusion_matrix(y_test, y_pred, labels=class_names)
+print(confusion_matrix)
 print(class_names)
 #print(gt)
+
+import matplotlib.pyplot as plt
+cm_display = metrics.ConfusionMatrixDisplay(confusion_matrix = confusion_matrix, display_labels = [False, True])
+cm_display.plot()
+plt.show()
 
 
 
