@@ -83,10 +83,10 @@ print(confusion_matrix)
 print(class_names)
 #print(gt)
 
-import matplotlib.pyplot as plt
-cm_display = metrics.ConfusionMatrixDisplay(confusion_matrix = confusion_matrix, display_labels = [False, True])
-cm_display.plot()
-plt.show()
+#import matplotlib.pyplot as plt
+#cm_display = metrics.ConfusionMatrixDisplay(confusion_matrix = confusion_matrix, display_labels = [False, True])
+#cm_display.plot()
+#plt.show()
 
 
 
