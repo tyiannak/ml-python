@@ -1,3 +1,5 @@
+(last update 2023/11/06)
+
 # ml-python
 This repo contains Python examples for the Machine Learning Course at the [MSc Program of AI](http://msc-ai.iit.demokritos.gr), organzied by NCSR Demokritos and University of Piraeus. Most examples are in the form of Jupyter notebooks. Since github does not render plotly figures, the links of this readme file are not directly to the github files but to nbviewer links ([https://nbviewer.jupyter.org](https://nbviewer.jupyter.org)). 
 
@@ -49,3 +51,4 @@ This repo contains Python examples for the Machine Learning Course at the [MSc P
 
 [Theodoros Giannakopoulos](https://tyiannak.github.io),
 Principal Researcher of Multimodal Machine Learning at the [Multimedia Analysis Group of the Computational Intelligence Lab (MagCIL)](https://labs-repos.iit.demokritos.gr/MagCIL/index.html) of the Institute of Informatics and Telecommunications, of the National Center for Scientific Research "Demokritos"
+
