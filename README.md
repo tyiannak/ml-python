@@ -42,9 +42,9 @@ This repo contains Python examples for the Machine Learning Course at the [MSc P
 
 
 ### Future tasks
-#### 1. Naive bayes for text task
-#### 2. Feature extraction example (audio?) + Feature selection example
-#### 3. SVM example
+#### 1. MULTI-LABEL (MUSIC OR AUDIO DOMAIN)
+#### 2. Naive bayes for text task
+#### 3. Feature extraction example (audio?) + Feature selection example
 
 ## Author
 <img src="https://tyiannak.github.io/files/3.JPG" align="left" height="100"/>
