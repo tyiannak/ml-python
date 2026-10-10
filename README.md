@@ -50,5 +50,5 @@ This repo contains Python examples for the Machine Learning Course at the [MSc P
 <img src="https://tyiannak.github.io/files/3.JPG" align="left" height="100"/>
 
 [Theodoros Giannakopoulos](https://tyiannak.github.io),
-Principal Researcher of Multimodal Machine Learning at the [Multimedia Analysis Group of the Computational Intelligence Lab (MagCIL)](https://labs-repos.iit.demokritos.gr/MagCIL/index.html) of the Institute of Informatics and Telecommunications, of the National Center for Scientific Research "Demokritos"
+Principal Researcher of Multimodal Machine Learning at the [Multimedia Analysis Group (MagCIL)](https://magcil.github.io) of the Institute of Informatics and Telecommunications, of the National Center for Scientific Research "Demokritos"
 
